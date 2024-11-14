@@ -8,9 +8,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 app = Flask(__name__)
-CORS(
-    app, origins=["http://localhost:3000", "*"]
-)  # Enable CORS for cross-origin requests from React
+CORS(app)  # Enable CORS for cross-origin requests from React
 app.register_blueprint(user_blueprint, url_prefix="/user")
 app.register_blueprint(quiz_blueprint, url_prefix="/quiz")
 

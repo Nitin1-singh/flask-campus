@@ -1,5 +1,6 @@
 generator db {
   provider = "prisma-client-py"
+  binaryTargets = ["debian-openssl-3.0.x"]
 }
 datasource db {
   provider = "postgresql"
