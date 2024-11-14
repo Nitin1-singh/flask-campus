@@ -1,0 +1,38 @@
+generator db {
+  provider = "prisma-client-py"
+}
+datasource db {
+  provider = "postgresql"
+  url      = "postgres://avnadmin:AVNS_cYJ1j-IAsCDgheogJKs@pg-9eb8105-scalable-chat-nitin.d.aivencloud.com:18964/defaultdb?sslmode=require"
+}
+model User {
+  id        Int      @id @default(autoincrement())
+  name      String?
+  password  String?
+  username  String?
+  createdAt DateTime @default(now())
+  responses UserResponse[]
+}
+// schema.prisma
+model Quiz {
+  id           Int       @id @default(autoincrement())
+  title        String?
+  description  String?
+  questions    Json
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime?  @updatedAt
+  passingMark Float @default(50.00)
+  responses UserResponse[]
+}
+
+model UserResponse {
+  id         Int       @id @default(autoincrement())
+  user       User      @relation(fields: [userId], references: [id])
+  userId     Int
+  quiz       Quiz      @relation(fields: [quizId], references: [id])
+  quizId     Int
+  responses  Json      // JSON to store the user's answers
+  createdAt  DateTime  @default(now())
+  my_score Float @default(0.00)
+}
+

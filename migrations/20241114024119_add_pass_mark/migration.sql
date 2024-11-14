@@ -1,0 +1,2 @@
+-- AlterTable
+ALTER TABLE "Quiz" ADD COLUMN     "passingMark" DOUBLE PRECISION NOT NULL DEFAULT 50.00;
