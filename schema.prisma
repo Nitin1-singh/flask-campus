@@ -1,7 +1,7 @@
-generator db {
-  provider = "prisma-client-py"
-  binaryTargets = ["debian-openssl-3.0.x"]
-}
+// generator db {
+//   provider = "prisma-client-py"
+//   binaryTargets = ["debian-openssl-3.0.x"]
+// }
 datasource db {
   provider = "postgresql"
   url      = "postgres://avnadmin:AVNS_cYJ1j-IAsCDgheogJKs@pg-9eb8105-scalable-chat-nitin.d.aivencloud.com:18964/defaultdb?sslmode=require"
