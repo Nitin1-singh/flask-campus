@@ -2,7 +2,6 @@ from flask import Flask
 from user.user import user_blueprint
 from quiz.quiz import quiz_blueprint
 
-from prisma import Prisma, register
 from flask_cors import CORS
 from dotenv import load_dotenv
 
